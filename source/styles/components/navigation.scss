@@ -1,0 +1,103 @@
+.navigation {
+    border-bottom: 1px solid $border-color;
+    position: relative;
+    &__burger {
+        display: none;
+        appearance: none;
+        background-color: none;
+        border: none;
+        @media (max-width: $mobile) {
+            display: inline-block;
+        }
+        position: relative;
+        width: 40px;
+        height: 24px;
+        margin-top: 10px;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+
+        .hamburger-inner,
+        .hamburger-inner:after,
+        .hamburger-inner:before {
+            position: absolute;
+            width: 40px;
+            height: 4px;
+            transition-timing-function: ease;
+            transition-duration: .15s;
+            transition-property: transform;
+            border-radius: 4px;
+            background-color: $gold; //todo
+        }
+        .hamburger-inner:after,
+        .hamburger-inner:before {
+            display: block;
+            content: ""
+        }
+
+        .hamburger-inner:before {
+            top: -10px
+        }
+
+        .hamburger-inner:after {
+            bottom: -10px
+        }
+
+        .hamburger-inner {
+            top: 2px
+        }
+
+        .hamburger-inner:before {
+            top: 10px;
+            transition-timing-function: ease;
+            transition-duration: .15s;
+            transition-property: transform, opacity
+        }
+
+        .hamburger-inner:after {
+            top: 20px
+        }
+
+        &.is-active .hamburger-inner {
+            transform: translate3d(0, 10px, 0) rotate(45deg)
+        }
+
+        &.is-active .hamburger-inner:before {
+            transform: rotate(-45deg) translate3d(-5.71429px, -6px, 0);
+            opacity: 0
+        }
+
+        &.is-active .hamburger-inner:after {
+            transform: translate3d(0, -20px, 0) rotate(-90deg)
+        }
+
+    }
+    &__list {
+        @include list-style;
+        display: flex;
+        justify-content: center;
+        padding-top: 11px;
+        @media (max-width: $mobile) {
+            flex-direction: column;
+            //            display: none;
+        }
+        &--active {
+            display: flex;
+        }
+        li {
+            margin-right: 5px;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+    &__link {
+        padding: 10px;
+        color: $gray-light;
+        display: inline-block;
+        &--active {
+            color: $gray-dark;
+            border-bottom: 4px solid $gold; // todo
+        }
+    }
+}

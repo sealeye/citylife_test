@@ -1,0 +1,92 @@
+{% extends "core/layout.twig" %} 
+{% set title = "City Life" %} 
+{% set class = "page page--gold" %} 
+
+{% block body %} 
+{% include 'blocks/promo-slider.twig' %} 
+{% include 'blocks/navigation.twig' %} 
+<div class="container">
+<div class="page__block page__block--border"> 
+    <h2>Why you’ll love vacation in Cuba</h2>
+    <p>It always had the allure a forbidden fruit. I love it for its uniqueness, creativity and survivalist spirit. I love it because, despite 60 years of setbacks, it remains an upbeat and open place. Walk down the street with a Cuban friend and, within one block, you’ll have received five handshakes, four kisses, three greetings of ‘dime hermano!’ and at least two invites into someone’s house. <a href="#">Read More ››</a></p>
+    <ul class="features">
+        <li class="features__item">
+            <svg width="80" height="80">
+                <use xlink:href="#icon-route"></use>
+            </svg>
+           <strong>1,920</strong>
+            <p>Trips</p>
+        </li>
+        <li class="features__item">
+          <svg width="80" height="76">
+                <use xlink:href="#icon-operators"></use>
+            </svg>
+           <strong>271</strong>
+            <p>Venues</p>
+        </li>
+        <li class="features__item">
+          <svg width="94" height="72">
+                <use xlink:href="#icon-bookings"></use>
+            </svg>
+           <strong>3,321</strong>
+            <p>Tickets Sold</p>
+        </li>
+        <li class="features__item">
+          <svg width="94" height="80">
+                <use xlink:href="#icon-reviews"></use>
+            </svg>
+           <strong>2,912</strong>
+            <p>Reviews</p>
+        </li>
+    </ul>
+</div>
+<div class="page__block">
+    <h2>What Cuba is about</h2>
+    <p>Cuba is like a prince in a poor man’s coat; behind the sometimes shabby facades, gold dust lingers. It’s these rich dichotomies that make travel here the exciting. Trapped in a time warp and reeling from an economic embargo that has grated for more than half a century, this is a country where you can wave goodbye to everyday assumptions and expect the unexpected.</p> 
+</div>
+{% include 'blocks/illustration.twig' %} 
+<div class="page__block page__block--border">
+    <h2>The Cadillacs of Cuba</h2>
+    <img src="img/cadillac.png" alt="" class="cadillac">
+    <p>The American trade embargo with Cuba in 1960 had the effect of instantly separating thousands of 1940s and 1950s Detroit-built cars from their spare parts supply. Convertibles were always popular, thanks to year-round tropical weather. The place for posing with your ride is hard to miss in Havana. The squares around Capitolio, a flattering copy of Washington’s Capitol building, are lined with 50-year-old American cars during daylight hours.</p>
+</div>
+<div class="page__block">
+    <h2>Cuba in Photos</h2>
+    <p>When you think of Carribean, you’re probably not thinking of Cuba. It’s the lone acacia silhouetted against a horizon stretching into eternity. It’s the snow-capped mountain almost on the equator and within sight of harsh deserts. It’s the lush, palm-fringed coastline of the Indian Ocean, it’s the Great Rift Valley that once threatened to tear the continent asunder, and it’s the dense forests reminiscent of the continent’s heart. In short, Kenya is a country of epic landforms that stir our deepest longings for this very special continent.</p>
+</div>
+</div>
+{% include 'blocks/slider.twig' %} 
+{% include 'blocks/footer.twig' %} 
+{% endblock %}
+
+{% block scripts %}
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
+
+    $(document).ready(function() {
+        var carousel = $("#carousel").waterwheelCarousel({
+            flankingItems: 3,
+            opacityMultiplier: 1,
+            separation: 280,
+            horizonOffset: 1,
+            separationMultiplier: 1,
+        });
+
+        $('#prev').bind('click', function() {
+            carousel.prev();
+            return false
+        });
+
+        $('#next').bind('click', function() {
+            carousel.next();
+            return false;
+        });
+    });
+</script>
+{% endblock %}

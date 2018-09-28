@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+  <title>{{ title | default("Axiom") }}</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  {% block styles %}{% endblock %}
+  <link href="css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/css/swiper.min.css">
+</head>
+
+<body>
+ <div style="display:none">
+    {% include '../../../build/img/sprite.svg' %}
+  </div>
+  <div class="body {{ class }}">
+    {% block body %}{% endblock %}
+  </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/js/swiper.min.js"></script>
+<script src="js/scripts.js"></script>  
+ {% block scripts %}{% endblock %}
+</body>
+</html>

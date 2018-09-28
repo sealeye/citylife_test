@@ -1,0 +1,32 @@
+.page__block {
+    h2 {
+        font-family: $serif-font;
+        text-align: center;
+        color: $gray-dark;
+        font-size: 32px;
+        line-height: 38px;
+        margin-bottom: 39px;
+        margin-top: 80px;
+    }
+    p {
+        margin-bottom: 48px;
+        padding: 0 100px;
+        text-align: left;
+        @media (max-width: $mobile) {
+            padding: 0 10px;
+        }
+    }
+    &--border {
+        border-bottom: 1px solid $border-color;
+        p:last-child {
+            margin-bottom: 80px;
+            @media (max-width: $mobile) {
+                margin-bottom: 30px;
+            }
+        }
+    }
+    img {
+        margin-bottom: 48px;
+        margin-top: 110px;
+    }
+}
