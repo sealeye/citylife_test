@@ -30,6 +30,7 @@
         margin-bottom: 88px;
         @media (max-width: $mobile) {
             margin-bottom: 30px;
+            margin-left: 0;
         }
     }
     &__heading {
@@ -39,12 +40,18 @@
         font-weight: normal;
         text-align: left;
         margin-bottom: 15px;
+        @media (max-width: $mobile) {
+            text-align: center;
+        }
     }
     &__list {
         @include list-style;
         display: flex;
         flex-direction: column;
         text-align: left;
+        @media (max-width: $mobile) {
+            text-align: center;
+        }
     }
     .footer &__link {
         color: $gray;

@@ -4,7 +4,7 @@
     &__burger {
         display: none;
         appearance: none;
-        background-color: none;
+        background-color: transparent;
         border: none;
         @media (max-width: $mobile) {
             display: inline-block;
@@ -14,7 +14,7 @@
         height: 24px;
         margin-top: 10px;
         position: absolute;
-        top: 10px;
+        top: 20px;
         left: 10px;
 
         .hamburger-inner,
