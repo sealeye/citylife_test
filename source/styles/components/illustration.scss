@@ -33,7 +33,8 @@
             height: 33px;
             border-left: 2px solid;
             border-bottom: 2px solid;
-            border-color: $gold; //todo
+            border-color: currentColor;
+            @include color-theme;
             position: absolute;
         }
         &:before {

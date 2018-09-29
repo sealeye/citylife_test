@@ -27,7 +27,8 @@
             transition-duration: .15s;
             transition-property: transform;
             border-radius: 4px;
-            background-color: $gold; //todo
+            background-color: currentColor;
+            @include color-theme;
         }
         .hamburger-inner:after,
         .hamburger-inner:before {
@@ -78,8 +79,7 @@
         justify-content: center;
         padding-top: 11px;
         @media (max-width: $mobile) {
-            flex-direction: column;
-            //            display: none;
+            flex-direction: column; //            display: none;
         }
         &--active {
             display: flex;
@@ -91,13 +91,16 @@
             }
         }
     }
-    &__link {
+    .navigation &__link {
         padding: 10px;
         color: $gray-light;
         display: inline-block;
-        &--active {
-            color: $gray-dark;
-            border-bottom: 4px solid $gold; // todo
-        }
+        color: $gray-light;
     }
+}
+.navigation .navigation__link.navigation__link--active {
+    border-color: currentColor;
+    @include color-theme;
+    color: $gray-dark;
+    border-bottom: 4px solid; // todo
 }

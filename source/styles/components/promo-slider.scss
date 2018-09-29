@@ -27,7 +27,8 @@
             bottom: 40px;
             left: 40px;
             border: 2px solid;
-            border-color: $gold; // todo
+            border-color: currentColor;
+            @include color-theme;        
             border-bottom: none;
         }
         &--active {}
@@ -71,7 +72,8 @@
             box-sizing: border-box;
             width: 50%;
             height: 2px;
-            background-color: $gold; // todo
+            background-color: currentColor;
+            @include color-theme;
         }
         &:before {
             margin-left: -100%;

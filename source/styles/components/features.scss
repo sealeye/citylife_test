@@ -16,13 +16,17 @@
         align-items: center;
         align-content: center;
         width: 21%;
-        &:hover{
-            svg{
+        svg {
+            fill: currentColor;
+            @include color-theme;
+        }
+        &:hover {
+            svg {
                 transform: scale(1.15);
                 transition: $hover;
             }
         }
-         @media (max-width: $mobile) {
+        @media (max-width: $mobile) {
             width: auto;
         }
         &:last-child {
