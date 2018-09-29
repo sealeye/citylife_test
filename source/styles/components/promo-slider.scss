@@ -27,6 +27,7 @@
             bottom: 40px;
             left: 40px;
             border: 2px solid;
+            z-index: 9;
             border-color: currentColor;
             @include color-theme;        
             border-bottom: none;
@@ -43,8 +44,10 @@
         text-align: center;
         margin-bottom: auto;
         margin-top: auto;
+        position: relative;
+        z-index: 10;
         @media (max-width: $mobile) {
-            font-size: 80px;
+            font-size: 70px;
         }
     }
     &__description {
